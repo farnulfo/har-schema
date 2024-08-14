@@ -321,24 +321,7 @@
                   "httpVersion": {
                     "type": "string"
                   },
-                  "headers": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "value": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name",
-                        "value"
-                      ]
-                    }
-                  },
+                  "headers": { "$ref": "#/$defs/name_value" },
                   "queryString": {
                     "type": "array",
                     "items": {
@@ -636,5 +619,25 @@
   },
   "required": [
     "log"
-  ]
+  ],
+  "$defs": {
+    "name_value": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "value"
+        ]
+      }
+    }
+  }
 }
