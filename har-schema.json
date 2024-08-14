@@ -82,180 +82,35 @@
                   "stack": {
                     "type": "object",
                     "properties": {
-                      "callFrames": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "functionName": {
-                              "type": "string"
-                            },
-                            "scriptId": {
-                              "type": "string"
-                            },
-                            "url": {
-                              "type": "string"
-                            },
-                            "lineNumber": {
-                              "type": "number"
-                            },
-                            "columnNumber": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "functionName",
-                            "scriptId",
-                            "url",
-                            "lineNumber",
-                            "columnNumber"
-                          ]
-                        }
-                      },
+                      "callFrames": { "$ref": "#/$defs/callFrames_type" },
                       "parent": {
                         "type": "object",
                         "properties": {
                           "description": {
                             "type": "string"
                           },
-                          "callFrames": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "functionName": {
-                                  "type": "string"
-                                },
-                                "scriptId": {
-                                  "type": "string"
-                                },
-                                "url": {
-                                  "type": "string"
-                                },
-                                "lineNumber": {
-                                  "type": "number"
-                                },
-                                "columnNumber": {
-                                  "type": "number"
-                                }
-                              },
-                              "required": [
-                                "functionName",
-                                "scriptId",
-                                "url",
-                                "lineNumber",
-                                "columnNumber"
-                              ]
-                            }
-                          },
+                          "callFrames": { "$ref": "#/$defs/callFrames_type" },
                           "parent": {
                             "type": "object",
                             "properties": {
                               "description": {
                                 "type": "string"
                               },
-                              "callFrames": {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "functionName": {
-                                      "type": "string"
-                                    },
-                                    "scriptId": {
-                                      "type": "string"
-                                    },
-                                    "url": {
-                                      "type": "string"
-                                    },
-                                    "lineNumber": {
-                                      "type": "number"
-                                    },
-                                    "columnNumber": {
-                                      "type": "number"
-                                    }
-                                  },
-                                  "required": [
-                                    "functionName",
-                                    "scriptId",
-                                    "url",
-                                    "lineNumber",
-                                    "columnNumber"
-                                  ]
-                                }
-                              },
+                              "callFrames": { "$ref": "#/$defs/callFrames_type" },
                               "parent": {
                                 "type": "object",
                                 "properties": {
                                   "description": {
                                     "type": "string"
                                   },
-                                  "callFrames": {
-                                    "type": "array",
-                                    "items": {
-                                      "type": "object",
-                                      "properties": {
-                                        "functionName": {
-                                          "type": "string"
-                                        },
-                                        "scriptId": {
-                                          "type": "string"
-                                        },
-                                        "url": {
-                                          "type": "string"
-                                        },
-                                        "lineNumber": {
-                                          "type": "number"
-                                        },
-                                        "columnNumber": {
-                                          "type": "number"
-                                        }
-                                      },
-                                      "required": [
-                                        "functionName",
-                                        "scriptId",
-                                        "url",
-                                        "lineNumber",
-                                        "columnNumber"
-                                      ]
-                                    }
-                                  },
+                                  "callFrames": { "$ref": "#/$defs/callFrames_type" },
                                   "parent": {
                                     "type": "object",
                                     "properties": {
                                       "description": {
                                         "type": "string"
                                       },
-                                      "callFrames": {
-                                        "type": "array",
-                                        "items": {
-                                          "type": "object",
-                                          "properties": {
-                                            "functionName": {
-                                              "type": "string"
-                                            },
-                                            "scriptId": {
-                                              "type": "string"
-                                            },
-                                            "url": {
-                                              "type": "string"
-                                            },
-                                            "lineNumber": {
-                                              "type": "number"
-                                            },
-                                            "columnNumber": {
-                                              "type": "number"
-                                            }
-                                          },
-                                          "required": [
-                                            "functionName",
-                                            "scriptId",
-                                            "url",
-                                            "lineNumber",
-                                            "columnNumber"
-                                          ]
-                                        }
-                                      }
+                                      "callFrames": { "$ref": "#/$defs/callFrames_type" }
                                     },
                                     "required": [
                                       "description",
@@ -619,6 +474,36 @@
         "required": [
           "name",
           "value"
+        ]
+      }
+    },
+    "callFrames_type": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "functionName": {
+            "type": "string"
+          },
+          "scriptId": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "lineNumber": {
+            "type": "number"
+          },
+          "columnNumber": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "functionName",
+          "scriptId",
+          "url",
+          "lineNumber",
+          "columnNumber"
         ]
       }
     }
