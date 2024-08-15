@@ -82,35 +82,35 @@
                   "stack": {
                     "type": "object",
                     "properties": {
-                      "callFrames": { "$ref": "#/$defs/callFrames_type" },
+                      "callFrames": { "$ref": "#/$defs/call_frame" },
                       "parent": {
                         "type": "object",
                         "properties": {
                           "description": {
                             "type": "string"
                           },
-                          "callFrames": { "$ref": "#/$defs/callFrames_type" },
+                          "callFrames": { "$ref": "#/$defs/call_frame" },
                           "parent": {
                             "type": "object",
                             "properties": {
                               "description": {
                                 "type": "string"
                               },
-                              "callFrames": { "$ref": "#/$defs/callFrames_type" },
+                              "callFrames": { "$ref": "#/$defs/call_frame" },
                               "parent": {
                                 "type": "object",
                                 "properties": {
                                   "description": {
                                     "type": "string"
                                   },
-                                  "callFrames": { "$ref": "#/$defs/callFrames_type" },
+                                  "callFrames": { "$ref": "#/$defs/call_frame" },
                                   "parent": {
                                     "type": "object",
                                     "properties": {
                                       "description": {
                                         "type": "string"
                                       },
-                                      "callFrames": { "$ref": "#/$defs/callFrames_type" }
+                                      "callFrames": { "$ref": "#/$defs/call_frame" }
                                     },
                                     "required": [
                                       "description",
@@ -195,47 +195,7 @@
                       ]
                     }
                   },
-                  "cookies": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "value": {
-                          "type": "string"
-                        },
-                        "path": {
-                          "type": "string"
-                        },
-                        "domain": {
-                          "type": "string"
-                        },
-                        "expires": {
-                          "type": "string"
-                        },
-                        "httpOnly": {
-                          "type": "boolean"
-                        },
-                        "secure": {
-                          "type": "boolean"
-                        },
-                        "sameSite": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name",
-                        "value",
-                        "path",
-                        "domain",
-                        "expires",
-                        "httpOnly",
-                        "secure"
-                      ]
-                    }
-                  },
+                  "cookies": { "$ref": "#/$defs/cooky" },
                   "headersSize": {
                     "type": "number"
                   },
@@ -267,48 +227,7 @@
                     "type": "string"
                   },
                   "headers": { "$ref": "#/$defs/name_value" },
-                  "cookies": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "value": {
-                          "type": "string"
-                        },
-                        "path": {
-                          "type": "string"
-                        },
-                        "domain": {
-                          "type": "string"
-                        },
-                        "expires": {
-                          "type": "string"
-                        },
-                        "httpOnly": {
-                          "type": "boolean"
-                        },
-                        "secure": {
-                          "type": "boolean"
-                        },
-                        "sameSite": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name",
-                        "value",
-                        "path",
-                        "domain",
-                        "expires",
-                        "httpOnly",
-                        "secure",
-                        "sameSite"
-                      ]
-                    }
-                  },
+                  "cookies": { "$ref": "#/$defs/cooky" },
                   "content": {
                     "type": "object",
                     "properties": {
@@ -477,7 +396,7 @@
         ]
       }
     },
-    "callFrames_type": {
+    "call_frame": {
       "type": "array",
       "items": {
         "type": "object",
@@ -504,6 +423,48 @@
           "url",
           "lineNumber",
           "columnNumber"
+        ]
+      }
+    },
+    "cooky": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "expires": {
+            "type": "string"
+          },
+          "httpOnly": {
+            "type": "boolean"
+          },
+          "secure": {
+            "type": "boolean"
+          },
+          "sameSite": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "value",
+          "path",
+          "domain",
+          "expires",
+          "httpOnly",
+          "secure",
+          "sameSite"
         ]
       }
     }
